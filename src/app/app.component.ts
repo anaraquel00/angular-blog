@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,13 @@ import { RouterModule } from '@angular/router';
   imports: [RouterModule], // Importe componentes usados no template
   template: `<router-outlet></router-outlet>`
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor(private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        console.log('Rota atual:', event.url);
+      }
+    });
+  }
+}
+
