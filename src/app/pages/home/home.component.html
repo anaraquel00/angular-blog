@@ -1,0 +1,20 @@
+<app-menu-title></app-menu-title>
+<app-menu-bar></app-menu-bar>
+
+<app-big-card
+  [id]="bigCardData.id"
+  [title]="bigCardData.title"
+  [description]="bigCardData.description"
+  [category]="bigCardData.category"
+  [imageUrl]="bigCardData.imageUrl">
+</app-big-card>
+
+<div class="small-cards-container">
+  <app-small-card
+    *ngFor="let card of smallCardsData"
+    [id]="card.id"
+    [title]="card.title"
+    [description]="card.description"
+    [category]="card.category">
+  </app-small-card>
+</div>

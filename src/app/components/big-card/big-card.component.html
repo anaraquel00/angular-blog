@@ -1,0 +1,10 @@
+<div class="big-card" routerLink="['/news', id]" (click)="openNews()">
+  <div class="big-card-content">
+    <span class="category">{{ category }}</span>
+    <h2>{{ title }}</h2>
+    <p>{{ description }}</p>
+  </div>
+  <div class="big-card-image">
+    <img [src]="imageUrl" alt="">
+  </div>
+</div>

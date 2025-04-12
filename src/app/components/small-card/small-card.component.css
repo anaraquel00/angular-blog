@@ -1,0 +1,44 @@
+:host {
+  display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+:host:hover {
+  transform: translateY(-3px);
+}
+
+.small-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4), 0px 7px 13px -3px rgba(0, 0, 0, 0.3), inset 0px -3px 0px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.small-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.category {
+  display: inline-block;
+  background-color: #361f77;
+  color: white;
+  padding: 0.2rem 0.7rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: #444;
+}
+
+p {
+  color: #666;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
