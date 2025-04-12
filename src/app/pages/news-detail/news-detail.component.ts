@@ -2,17 +2,8 @@
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule, NgIfContext } from '@angular/common';
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { NewsService } from '../../services/news.service';
+import { NewsService, NewsItem } from '../../services/news.service';
 
-
-export interface NewsItem {
-  id: string;
-  title: string;
-  content: string;
-  imageUrl: string;
-  category: string;
-  date: string;
-}
 
 @Component({
   standalone: true,
@@ -45,19 +36,13 @@ export class NewsDetailComponent implements OnInit {
      private newsService: NewsService) {}
 
 
-  ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    console.log('ID da rota:', id);
+     ngOnInit() {
+      const id = this.route.snapshot.paramMap.get('id');
+      console.log('ID da rota:', id);
 
-
-}
-
-  if (id: string) {
-    this.newsItem = this.newsService.getNewsById(id);
-    console.log('Notícia encontrada:', this.newsItem);
+      if (id) { // ✅ Verificação correta
+        this.newsItem = this.newsService.getNewsById(id);
+        console.log('Notícia encontrada:', this.newsItem);
+      }
+    }
   }
-  }
-
-
-
-
