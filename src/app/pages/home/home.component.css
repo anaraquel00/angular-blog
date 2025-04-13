@@ -21,3 +21,9 @@
     min-height: 200px;
   }
 }
+
+/* Garante que o container não ultrapasse a largura da tela */
+.small-cards-container, app-big-card {
+  max-width: 100%;
+  overflow: hidden;
+}

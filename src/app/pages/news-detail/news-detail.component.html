@@ -1,12 +1,24 @@
-<ng-template #notFound>
-  <p>Notícia não encontrada 😢</p>
-  <a routerLink="/">Voltar para a home</a>
-</ng-template>
+<div class="news-detail-container"[attr.data-id]="newsItem?.id">
+  <div class="news-header">
+    <h1 class="news-title">{{ newsItem?.title }}</h1>
+    <div class="news-meta">
+      <span>{{ newsItem?.category }}</span>
+      <span>{{ newsItem?.date | date }}</span>
+    </div>
+  </div>
 
-<div *ngIf="newsItem; else notFound">
-  <h1>{{ newsItem.title }}</h1>
-  <p>{{ newsItem.content }}</p>
-  <img [src]="newsItem.imageUrl" [alt]="newsItem.title">
+  <img *ngIf="newsItem?.imageUrl"
+       [src]="newsItem?.imageUrl"
+       [alt]="newsItem?.title"
+       class="news-image">
 
-  <a routerLink="/" class="back-button">Voltar para a home</a>
+  <div class="news-content">
+    <p>{{ newsItem?.content }}</p>
+  </div>
+  <button class="back-button" (click)="voltarParaHome()">
+    ← Voltar para Home
+  </button>
 </div>
+<ng-template #loading>
+  <p>Carregando notícia...</p>
+</ng-template>
